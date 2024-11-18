@@ -1,6 +1,6 @@
 ### A Tool for Pathfinding Algorithm Visualisation
 
-![AlgoViz Logo](path/to/logo.png)
+![AlgoViz Logo](imgs/image.png)
 
 ## Features
 
