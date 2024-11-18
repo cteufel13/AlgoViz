@@ -87,7 +87,8 @@ class TextBox():
         self.text = ""
         self.defaulttext = defaulttext
         self.value = -1
-        self.font = pygame.font.Font(None, 36)
+        self.fontsize = 42
+        self.font = pygame.font.Font(None, self.fontsize)
         self.active = False
         self.cursor_visible = False  # Cursor visibility for blinking effect
         self.cursor_position = 0
@@ -134,7 +135,8 @@ class TextBox():
     def handleMouseMotion(self,event,screen):
         size = screen.get_size()
         rect = pygame.Rect(self.relative_pos[0]*size[0], self.relative_pos[1]*size[1], self.box_size[0]*size[0], self.box_size[1]*size[1])
-        
+        self.fontsize = size[0]//45
+        self.font = pygame.font.Font(None, self.fontsize) 
         if event.type == pygame.MOUSEMOTION:
             # Change cursor based on hover status
             if rect.collidepoint(event.pos):
@@ -149,6 +151,8 @@ class TextBox():
         size = screen.get_size()
 
         rect = pygame.Rect(self.relative_pos[0]*size[0], self.relative_pos[1]*size[1], self.box_size[0]*size[0], self.box_size[1]*size[1])
+        self.fontsize = size[0]//45
+        self.font = pygame.font.Font(None, self.fontsize)
         pygame.draw.rect(screen,(175,175,175) if self.active else (255,255,255),rect,2)
         if self.text == "":
             text = self.font.render(self.defaulttext,True,(120,120,120))

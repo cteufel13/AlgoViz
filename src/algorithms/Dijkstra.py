@@ -4,7 +4,7 @@ import heapq
 
 class Dijkstra(Algorithm):
 
-    def __init__(self,start,end,map):
+    def __init__(self,start=None,end=None,map=None):
         super().__init__("Dijkstra")
         self.type = 'pathfinding'
         self.map = map

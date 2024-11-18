@@ -3,7 +3,7 @@ import heapq
 import numpy as np
 
 class Astar(Algorithm):
-    def __init__(self,start,end,map:np.array,heuristic:callable):
+    def __init__(self,start=None,end=None,map:np.array=None,heuristic:callable = None):
         super().__init__("Astar")
         self.type = 'pathfinding'
         self.map = map

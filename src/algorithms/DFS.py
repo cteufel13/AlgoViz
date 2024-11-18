@@ -5,7 +5,7 @@ from collections import deque
 
 class DFS(Algorithm):
 
-    def __init__(self, start, end, map):
+    def __init__(self, start=None, end=None, map=None):
         super().__init__("DFS")
         self.type = 'pathfinding'
         self.map = map
