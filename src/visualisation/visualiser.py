@@ -169,7 +169,7 @@ class Visualizer:
                 if 0 <= index < len(self.square_colors):  # Ensure it's within bounds
                     current_color = self.gradientcolor[self.value]
                     self.square_colors[index] = current_color
-                    self.grid[index] = 1 if self.grid[index] == self.value else self.value
+                    self.grid[index] = self.value
             
             # Reset line points after drawing
             self.line_start, self.line_end = None, None
@@ -270,7 +270,7 @@ class Visualizer:
                 if name == "Set Start/End":
                     self.setstartstop_mode = not self.setstartstop_mode
                     self.BoolStartEnd = True
-                    self.count = 1
+                    self.count = 1 if self.count == 0 else self.count
 
                     if self.setstartstop_mode:
                         button.activate()
